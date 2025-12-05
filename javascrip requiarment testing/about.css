@@ -1,0 +1,264 @@
+:root {
+  --red: #d00000;
+  --dark: #111;
+  --light: #fff;
+  --gray: #666;
+  --container: 1100px;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--dark);
+  background: var(--light);
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background: var(--red);
+  color: #fff;
+  padding: 10px 0;
+}
+.header .container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 4px;
+}
+.header nav a {
+  color: black;
+  margin-left: 14px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.header nav a.active {
+  border-bottom: 2px solid black;
+}
+/* ---------------------------------
+   Dark Mode Variables
+--------------------------------- */
+.dark-mode {
+  --light: #111;      /* body background */
+  --dark: #f5f5f5;    /* text color */
+  --gray: #ccc;       /* paragraph text */
+  --red: #b30000;     /* darker red variant for header */
+}
+
+.bayern-bg {
+  background: linear-gradient(120deg, #c80000, #ffffff, #c80000);
+  background-size: 200% 200%;
+  animation: moveGradient 6s ease infinite;
+  text-align: center;
+  color: #b30000;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+
+/* Extra component adjustments */
+.dark-mode .header {
+  background: var(--red);
+}
+
+.dark-mode .header nav a {
+  color: var(--dark);
+}
+
+.dark-mode .hero {
+  filter: brightness(0.7);
+}
+.dark-mode .footer {
+  background: #000;
+}
+.dark-toggle {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 16px;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hero section */
+.hero {
+  background: url("images/hero2.jpg") center/cover no-repeat;
+  color: black;
+  text-align: center;
+  padding: 80px 16px;
+}
+.dark-mode .hero-text h1,
+.dark-mode .hero-text p {
+  color: #fff !important;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.hero-text p {
+  font-size: 18px;
+}
+
+/* About content */
+.container.about {
+  max-width: var(--container);
+  margin: 40px auto;
+  padding: 0 16px;
+}
+.content h2 {
+  color: var(--red);
+  margin-top: 24px;
+}
+.content p, .content ul {
+  margin-top: 10px;
+  color: var(--gray);
+}
+.content ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+.img-grid img {
+  width: 100%;
+  border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.feedback-section {
+  background: var(--light);
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 40px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  color: var(--dark);
+}
+
+.form-title {
+  text-align: center;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.feedback-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+  color: var(--dark);
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--gray);
+  border-radius: 6px;
+  font-size: 16px;
+  background: var(--light);
+  color: var(--dark);
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: var(--red);
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  height: 16px;
+}
+
+.btn-submit {
+  background: var(--red);
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-submit:hover {
+  background: #b30000;
+}
+
+/* Improve dark mode readability */
+.dark-mode .feedback-section {
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+.dark-mode .error {
+  color: #ff5a5a;
+}
+
+.btn-submit {
+  background: var(--red);
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-submit:hover {
+  background: #b30000;
+}
+
+/* Footer */
+.footer {
+  background: var(--dark);
+  color: #fff;
+  text-align: center;
+  padding: 16px 0;
+  margin-top: 40px;
+}
+
